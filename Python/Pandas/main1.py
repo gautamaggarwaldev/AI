@@ -49,7 +49,7 @@ print(df)
 
 
 
-df = pd.read_csv("V:\AI Engineer Series (AES)\cu.item", sep='\t')
+df = pd.read_csv("V:\AI Engineer Series (AES)\Python\Pandas\cu.item", sep='\t')
 print(df)
 
 
