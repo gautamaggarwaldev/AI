@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.11.1/core.css">
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+
+<body>
+
+    <div>
+        <b>Hello, welcome to PyScript!</b>
+        <p>
+            Today is <u>
+                <label id="today"></label>
+            </u>
+        </p>
+    </div>
+
+    <br>
+
+    <div id="pi" class="alert alert-primary"></div>
+    <py-script>
+        from datetime import date
+        from pyscript import Element
+
+        # Update the "today" label
+        Element("today").write(date.today().strftime('%A %B %d, %Y'))
+
+        # Function to calculate pi using the Wallis formula
+        def wallis(n):
+            pi = 1
+            for i in range(1, n+1):
+                pi *= (4*i**2)/(4*i**2 - 1)
+            return 2*pi
+
+        # Calculate pi and update the "pi" div
+        pi = wallis(1000000)
+        Element("pi").write(f'π ≈ {pi}')
+    </py-script>
+
+</body>
+
+</html>
