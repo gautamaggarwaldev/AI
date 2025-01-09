@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="calculate">
+        <h1>Calculate average marks</h1>
+
+        <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('form')}}" method="post">
+            <input type="text" name="physics" placeholder="Physics" required="required" />
+            <input type="text" name="maths" placeholder="Maths" required="required" />
+            <input type="text" name="chemistry" placeholder="Chemistry" required="required" />
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">Calculate Button</button>
+        </form>
+
+        <br>
+        The average mark is {{score}}
+        <br>
+    </div>
+
+</body>
+
+</html>
